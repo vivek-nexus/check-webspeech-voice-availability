@@ -4,9 +4,15 @@ Checks if voices of specified langauge are available in the browser's speech syn
 - Returns true if at least one voice is available for the specified langauge
 - Returns false if 0 voices are available for the specified lanaguge or if WebSpeech API is not supported by the browser.
 
+<br />
+<br />
+
+<br />
+<br />
+
 # Usage instructions
 ## Load function from file
-Download voiceChecker.js
+Download voiceChecker.js from https://www.vivek.nexus/check-webspeech-voice-availability/voiceChecker.js
 
 ### Vanilla JS
 ```` html
@@ -141,7 +147,7 @@ export default {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voice Checker</title>
     <script type="module">
-        import { isLanguageVoiceSupported } from 'https://example.com/voiceChecker.js';
+        import { isLanguageVoiceSupported } from 'https://www.vivek.nexus/check-webspeech-voice-availability/voiceChecker.js';
 
         async function testVoiceChecker() {
             try {
@@ -173,7 +179,7 @@ const VoiceCheckerComponent = () => {
     useEffect(() => {
         const loadVoiceChecker = async () => {
             try {
-                const { isLanguageVoiceSupported } = await import('https://example.com/voiceChecker.js');
+                const { isLanguageVoiceSupported } = await import('https://www.vivek.nexus/check-webspeech-voice-availability/voiceChecker.js');
 
                 const languageCode = 'en'; // Example language code
                 const isSupported = await isLanguageVoiceSupported(languageCode);
@@ -222,7 +228,7 @@ export class VoiceCheckerComponent implements OnInit {
 
     async ngOnInit() {
         try {
-            const { isLanguageVoiceSupported } = await import('https://example.com/voiceChecker.js');
+            const { isLanguageVoiceSupported } = await import('https://www.vivek.nexus/check-webspeech-voice-availability/voiceChecker.js');
 
             const languageCode = 'en'; // Example language code
             const isSupported = await (window as any).isLanguageVoiceSupported(languageCode);
@@ -248,7 +254,7 @@ Auto generated example
 export default {
     async created() {
         try {
-            const { isLanguageVoiceSupported } = await import('https://example.com/voiceChecker.js');
+            const { isLanguageVoiceSupported } = await import('https://www.vivek.nexus/check-webspeech-voice-availability/voiceChecker.js');
 
             const languageCode = 'en'; // Example language code
             const isSupported = await window.isLanguageVoiceSupported(languageCode);
