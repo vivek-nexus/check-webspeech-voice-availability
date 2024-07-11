@@ -22,7 +22,7 @@ Download voiceChecker.js from https://www.vivek.nexus/check-webspeech-voice-avai
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voice Checker</title>
-    <script type="module" src="URL_TO_YOUR_MODULE/voiceChecker.js"></script>
+    <script type="module" src="./voiceChecker.js"></script>
 </head>
 <body>
     <h1>Voice Checker</h1>
