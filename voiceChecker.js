@@ -6,7 +6,7 @@
  * @returns {Promise<boolean>} A promise that resolves to true if voices for the specified language are available; otherwise, false. Also, returns false is WebSpeech API is not supported by the browser.
  */
 
-async function isAtLeastOneVoiceAvailable(languageCode) {
+export async function isAtLeastOneVoiceAvailable(languageCode) {
     return new Promise((resolve, reject) => {
         let localLanguageCode
 
