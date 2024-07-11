@@ -56,7 +56,7 @@ function VoiceCheckerComponent() {
         // You can use a timeout as a workaround during development
         // In production, effects will run only once, so timeout is not needed
         const timeout = setTimeout(() => {
-            isAtLeastOneVoiceAvailable("hi").then((isSupported) => {
+            isAtLeastOneVoiceAvailable("en").then((isSupported) => {
                 console.log(isSupported)
             }).catch((isSupported) => {
                 console.log(isSupported)
