@@ -20,31 +20,27 @@ export async function isAtLeastOneVoiceAvailable(languageCode) {
             const synthesisInterface = window.speechSynthesis
             const voices = synthesisInterface.getVoices()
 
-            // For browsers that load voices synchronously
-            if (voices) {
+            // For browsers that load voices asynchronously
+            if (synthesisInterface.onvoiceschanged !== undefined) {
+                synthesisInterface.onvoiceschanged = () => {
+                    const voices = synthesisInterface.getVoices()
+                    for (const voice of voices) {
+                        if (languageCode === voice.lang.slice(0, 2))
+                            resolve(true)
+                    }
+                    reject(false)
+                }
+            }
+            // Wait for onvoiceschanged to resolve/reject the promise, above
+            // If not done within 1s, assume onvoiceschanged will not fire and shift to sync voice method
+            // For browsers that load voices synchronously or that don't support onvoiceschanged
+            setTimeout(() => {
                 for (const voice of voices) {
                     if (languageCode === voice.lang.slice(0, 2))
                         resolve(true)
                 }
-                resolve(false)
-            }
-            // For browsers that load voices asynchronously
-            else {
-                if (synthesisInterface.onvoiceschanged !== undefined) {
-                    synthesisInterface.onvoiceschanged = () => {
-                        const voices = synthesisInterface.getVoices()
-                        if (voices) {
-                            for (const voice of voices) {
-                                if (languageCode === voice.lang.slice(0, 2))
-                                    resolve(true)
-                            }
-                            reject(false)
-                        }
-                    }
-                }
-                // Return false for unknown cases (cross browser implementation differs widely for WebSpeech API)
                 reject(false)
-            }
+            }, 1000)
         }
         // WebSpeech API is not supported
         else
