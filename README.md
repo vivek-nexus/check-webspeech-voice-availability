@@ -16,20 +16,22 @@ Download voiceChecker.js from https://www.vivek.nexus/check-webspeech-voice-avai
 ```` html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voice Checker</title>
-    <script type="module" src="./voiceChecker.js"></script>
 </head>
+
 <body>
     <h1>Voice Checker</h1>
     <p>Open the console to see the results.</p>
     <script type="module">
+        import { isAtLeastOneVoiceAvailable } from "./voiceChecker.js"
         async function testVoiceChecker() {
             try {
                 const languageCode = 'en'; // Example language code
-                const isSupported = await window.isAtLeastOneVoiceAvailable(languageCode);
+                const isSupported = await isAtLeastOneVoiceAvailable(languageCode);
                 console.log(`Voices available for language '${languageCode}':`, isSupported);
             } catch (error) {
                 console.error('Voice availability', error);
@@ -40,12 +42,13 @@ Download voiceChecker.js from https://www.vivek.nexus/check-webspeech-voice-avai
         testVoiceChecker();
     </script>
 </body>
+
 </html>
 ````
 
 ### React
 ````jsx
-"use client"
+// Client side component
 
 import { useEffect } from 'react';
 import { isAtLeastOneVoiceAvailable } from './voiceChecker'; // Adjust the path as per your file structure
