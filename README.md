@@ -34,7 +34,7 @@ Download voiceChecker.js from https://www.vivek.nexus/check-webspeech-voice-avai
                 const isSupported = await window.isAtLeastOneVoiceAvailable(languageCode);
                 console.log(`Voices available for language '${languageCode}':`, isSupported);
             } catch (error) {
-                console.error('Error checking voice support:', error);
+                console.error('Voice availability', error);
             }
         }
 
@@ -59,7 +59,7 @@ function VoiceCheckerComponent() {
                 const isSupported = await isAtLeastOneVoiceAvailable(languageCode);
                 console.log(`Voices available for language '${languageCode}':`, isSupported);
             } catch (error) {
-                console.error('Error checking voice support:', error);
+                console.error('Voice availability:', error);
             }
         };
 
@@ -101,7 +101,7 @@ export class VoiceCheckerComponent implements OnInit {
             const isSupported = await (window as any).isAtLeastOneVoiceAvailable(languageCode);
             console.log(`Voices available for language '${languageCode}':`, isSupported);
         } catch (error) {
-            console.error('Error checking voice support:', error);
+            console.error('Voice availability:', error);
         }
     }
 }
@@ -124,7 +124,7 @@ export default {
             const isSupported = await window.isAtLeastOneVoiceAvailable(languageCode);
             console.log(`Voices available for language '${languageCode}':`, isSupported);
         } catch (error) {
-            console.error('Error checking voice support:', error);
+            console.error('Voice availability:', error);
         }
     }
 }
@@ -155,7 +155,7 @@ export default {
                 const isSupported = await isAtLeastOneVoiceAvailable(languageCode);
                 console.log(`Voices available for language '${languageCode}':`, isSupported);
             } catch (error) {
-                console.error('Error checking voice support:', error);
+                console.error('Voice availability:', error);
             }
         }
 
@@ -185,7 +185,7 @@ const VoiceCheckerComponent = () => {
                 const isSupported = await isAtLeastOneVoiceAvailable(languageCode);
                 console.log(`Voices available for language '${languageCode}':`, isSupported);
             } catch (error) {
-                console.error('Error loading or checking voice support:', error);
+                console.error('Voice availability:', error);
             }
         };
 
@@ -234,7 +234,7 @@ export class VoiceCheckerComponent implements OnInit {
             const isSupported = await (window as any).isAtLeastOneVoiceAvailable(languageCode);
             console.log(`Voices available for language '${languageCode}':`, isSupported);
         } catch (error) {
-            console.error('Error loading or checking voice support:', error);
+            console.error('Voice availability:', error);
         }
     }
 }
@@ -260,7 +260,7 @@ export default {
             const isSupported = await window.isAtLeastOneVoiceAvailable(languageCode);
             console.log(`Voices available for language '${languageCode}':`, isSupported);
         } catch (error) {
-            console.error('Error loading or checking voice support:', error);
+            console.error('Voice availability:', error);
         }
     }
 }
