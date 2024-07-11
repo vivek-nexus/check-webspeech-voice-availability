@@ -2,7 +2,7 @@
 Checks if voices of specified langauge are available in the browser's speech synthesis interface (WebSpeech API).
 - Takes a 2 character ISO 639-1 language code as input
 - Returns true if at least one voice is available for the specified langauge
-- Returns false if 0 languages are available or WebSpeech API is not supported on the browser.
+- Returns false if 0 voices are available for the specified lanaguge or if WebSpeech API is not supported by the browser.
 
 # Usage instructions
 ## Load function from file
