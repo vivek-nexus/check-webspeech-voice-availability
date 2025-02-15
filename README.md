@@ -12,7 +12,7 @@ Checks if voices of specified langauge are available in the browser's speech syn
 
 # Usage instructions
 ## Load from file
-Download voiceChecker.js from https://www.vivek.nexus/check-webspeech-voice-availability/voiceChecker.js
+Download voiceChecker.js from https://vivek-nexus.github.io/check-webspeech-voice-availability/voiceChecker.js
 
 ### Vanilla JS
 ```` html
